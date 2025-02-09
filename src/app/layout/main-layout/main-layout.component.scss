@@ -1,0 +1,63 @@
+.wrapper {
+  display: flex;
+  height: 100vh; // Full viewport height
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 260px; // Sidebar width
+  height: 100vh; // Full height
+  background-color: #2c3e50; // Dark theme for sidebar
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); // Subtle shadow on the right
+}
+
+.main-panel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa; // Light gray background
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; // Enable scrolling for long content
+}
+
+// Navbar styles
+app-navbar-layout {
+  height: 60px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+// Responsive adjustments
+@media (max-width: 992px) {
+  .sidebar {
+    width: 200px; // Smaller sidebar for tablets
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-panel {
+    flex-grow: 1;
+  }
+}
